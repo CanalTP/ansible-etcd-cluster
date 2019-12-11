@@ -4,6 +4,9 @@ ETCD_DATA_DIR="{{etcd_cluster_data_dir}}"
 #ETCD_SNAPSHOT_COUNTER="10000"
 #ETCD_HEARTBEAT_INTERVAL="100"
 #ETCD_ELECTION_TIMEOUT="1000"
+ETCD_AUTO_COMPACTION_MODE="{{ etcd_auto_compaction_mode }}"
+ETCD_AUTO_COMPACTION_RETENTION={{ etcd_auto_compaction_retention }}
+
 {% if etcd_iface_public == 'all' %}
 {% set client_endpoints = [ etcd_listen_public ] %}
 {% else %}
